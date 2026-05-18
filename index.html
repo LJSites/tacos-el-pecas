@@ -1,0 +1,330 @@
+<!doctype html>
+<!--
+  ARCHETYPE: Late-night street taquería — warm, soulful, after-dark. Deep
+  brown-black canvas, marigold and salsa-red, a soft optical serif (Fraunces).
+  Distinct family from the other mockups (not the loud yellow poster, not the
+  cream print taquería).
+  STRUCTURAL DECISIONS:
+  - Slim dark nav with the late-hours hook front and centre.
+  - Hero leads on the night-owl angle; text left, single photo right.
+  - Menu is a warm typeset taco board grouped by meat, with one price column.
+  - Testimonies as a three-up offset quote wall, no avatars/stars.
+  - Primary CTA "Get Directions" (a walk-up street stand) repeated twice.
+  - Animation: none.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tacos El Pecas — Late-Night Street Tacos in East L.A.</title>
+<meta name="description" content="Classic LA street tacos on Soto Street — cabeza, tripas, asada, chorizo and more. Packed with flavor, open late, seven nights a week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#17120c; --panel:#211a11; --cream:#f1e4c5; --marigold:#e09a2c;
+    --salsa:#cc4127; --muted:#9c8c69; --line:#352a1b;
+    --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--night);color:var(--cream);
+    font-family:var(--sans);font-size:18px;line-height:1.62}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marigold)}
+
+  /* ---- nav ---- */
+  .nav{border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:16px 26px}
+  .mark{font-family:var(--serif);font-weight:900;font-size:23px;
+    letter-spacing:-.01em}
+  .mark span{color:var(--salsa)}
+  .nav-right{display:flex;align-items:center;gap:20px}
+  .nav-hrs{font-size:12px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted)}
+  .nav-hrs b{color:var(--cream)}
+  .ghost{font-weight:700;font-size:13px;letter-spacing:.04em;
+    text-decoration:none;border-bottom:2px solid var(--salsa);
+    padding-bottom:3px}
+  .ghost:hover{color:var(--marigold)}
+
+  /* ---- hero ---- */
+  .hero{padding:78px 0 70px}
+  .hero .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;
+    align-items:center}
+  .hero .eyebrow{margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:900;
+    font-size:clamp(3rem,7.4vw,5.4rem);line-height:.98;letter-spacing:-.02em}
+  h1 em{font-style:italic;font-weight:500;color:var(--marigold)}
+  .hero p.lede{font-size:1.2rem;color:#d8caa6;max-width:40ch;margin-top:24px}
+  .hero-cta{margin-top:34px;display:flex;align-items:center;gap:26px;
+    flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--salsa);color:var(--cream);
+    font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.07em;
+    text-transform:uppercase;text-decoration:none;padding:17px 34px}
+  .btn:hover{background:var(--marigold);color:var(--night)}
+  .hero-cta .note{font-size:13px;color:var(--muted);font-weight:500}
+  .hero-photo{width:100%;height:470px;object-fit:cover;
+    border-bottom:4px solid var(--marigold)}
+
+  /* ---- band ---- */
+  .band{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+  .band img{width:100%;height:172px;object-fit:cover;
+    filter:saturate(1.08) brightness(.96)}
+
+  /* ---- sections ---- */
+  section{padding:88px 0}
+  h2{font-family:var(--serif);font-weight:900;
+    font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.04;letter-spacing:-.018em}
+
+  /* ---- about ---- */
+  .about{border-top:1px solid var(--line)}
+  .about .grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;
+    align-items:start}
+  .about .eyebrow{margin-bottom:14px}
+  .about p{font-size:1.16rem;margin-top:20px;color:#d8caa6}
+  .about p:first-of-type{margin-top:24px;font-family:var(--serif);
+    font-weight:500;font-style:italic;font-size:1.5rem;color:var(--cream);
+    line-height:1.4}
+
+  /* ---- menu ---- */
+  .menu{background:var(--panel);border-top:6px solid var(--salsa)}
+  .menu-head{display:flex;justify-content:space-between;align-items:flex-end;
+    gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .menu-head .eyebrow{color:var(--marigold)}
+  .menu-head .note{font-size:12px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);max-width:24ch;
+    text-align:right}
+  .taco-list{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .taco{display:flex;align-items:baseline;gap:14px;padding:17px 0;
+    border-bottom:1px solid var(--line)}
+  .taco .t-name{font-family:var(--serif);font-weight:600;font-size:1.34rem}
+  .taco .t-name small{display:block;font-family:var(--sans);font-weight:400;
+    font-size:.86rem;color:var(--muted);margin-top:2px}
+  .taco .dots{flex:1;border-bottom:1px dotted #4c3f29;
+    transform:translateY(-5px)}
+  .taco .t-price{font-family:var(--serif);font-weight:600;
+    color:var(--marigold)}
+  .menu-foot{margin-top:30px;font-size:1.05rem;color:#d8caa6;font-style:italic}
+
+  /* ---- testimonies ---- */
+  .voices{border-top:1px solid var(--line)}
+  .voices .eyebrow{margin-bottom:14px}
+  .quote-wall{display:grid;grid-template-columns:1fr 1fr 1fr;gap:34px;
+    margin-top:44px}
+  .quote-wall blockquote:nth-child(2){transform:translateY(34px)}
+  .quote-wall p{font-family:var(--serif);font-weight:500;font-size:1.2rem;
+    line-height:1.45}
+  .quote-wall p::before{content:"\201C";color:var(--salsa);font-weight:900}
+  .quote-wall p::after{content:"\201D";color:var(--salsa);font-weight:900}
+  .quote-wall .who{font-weight:700;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--marigold);margin-top:18px}
+
+  /* ---- visit ---- */
+  .visit{background:var(--panel);border-top:1px solid var(--line)}
+  .visit .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;
+    align-items:start}
+  .visit .eyebrow{margin-bottom:14px}
+  .hours{margin-top:24px}
+  .hours .hr{display:flex;justify-content:space-between;padding:13px 0;
+    border-bottom:1px solid var(--line);font-weight:500}
+  .hours .hr span:first-child{color:var(--muted)}
+  .hours .hr.late span:last-child{color:var(--marigold);font-weight:700}
+  .place{margin-top:26px;line-height:1.8}
+  .place a{color:var(--marigold);text-decoration:none}
+  .place a:hover{text-decoration:underline}
+  .map{width:100%;height:430px;border:1px solid var(--line);
+    filter:saturate(.92)}
+
+  /* ---- footer ---- */
+  footer{padding:84px 0 42px}
+  .foot-cta{text-align:center;padding-bottom:56px;
+    border-bottom:1px solid var(--line)}
+  .foot-cta h2{margin:14px 0 28px}
+  .foot-grid{display:flex;justify-content:space-between;gap:32px;
+    flex-wrap:wrap;padding-top:44px}
+  .foot-grid .eyebrow{display:block;margin-bottom:9px}
+  .foot-grid a{color:var(--cream);text-decoration:none}
+  .foot-grid a:hover{color:var(--marigold)}
+  .credit{margin-top:48px;font-size:.9rem;color:var(--muted);font-style:italic}
+  .credit a{color:var(--marigold)}
+
+  @media(max-width:880px){
+    .hero .grid,.about .grid,.visit .grid{grid-template-columns:1fr;gap:34px}
+    .hero-photo{height:340px}
+    .band{grid-template-columns:repeat(3,1fr)}
+    .band img{height:140px}
+    .taco-list{grid-template-columns:1fr;gap:0}
+    .quote-wall{grid-template-columns:1fr;gap:28px}
+    .quote-wall blockquote:nth-child(2){transform:none}
+    section{padding:62px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="mark">Tacos El&nbsp;<span>Pecas</span></div>
+    <div class="nav-right">
+      <span class="nav-hrs">Open till <b>1AM</b> Fri &amp; Sat</span>
+      <a class="ghost" href="https://www.google.com/maps/dir/?api=1&destination=1001+S+Soto+St,+Los+Angeles,+CA+90023"
+         target="_blank" rel="noopener">Get Directions</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Soto Street &middot; East Los Angeles</p>
+          <h1>Street tacos,<br>served <em>late.</em></h1>
+          <p class="lede">Classic L.A. street-taco style — cabeza, tripas,
+            asada, chorizo, off the comal and packed with flavor. Pull up
+            hungry; we're going till the small hours.</p>
+          <div class="hero-cta">
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=1001+S+Soto+St,+Los+Angeles,+CA+90023"
+               target="_blank" rel="noopener">Get Directions</a>
+            <span class="note">Seven nights a week &middot; Cash &amp; card</span>
+          </div>
+        </div>
+        <img class="hero-photo"
+          src="https://lh3.googleusercontent.com/place-photos/AJRVUZMBv5yQ3-VpgFeJeihHUZs187JgJuY-6pRjLLoA6kNhuKDfmC6UweDLVl77ifkbvedO0uiPfc58RCAsY5JnOPTmw9EqEZjlA9xjJqck4eaDimzhXWYclwxcEVGXVh3E8UR96QaLPJpVzJERyQ=s4800-w1600"
+          alt="Tacos at Tacos El Pecas">
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNlMh70z_LB8-0PIa-k77UOuYg_esB8AgkkFaAHJIVp086RlN0AyhR5UdN7mFepG-sY90d-O8vS9ZJTHlRdJvxgZgTemXxu3YWbsPBVlfIQn20dYplPHs0ciTAFdz2vCnzy4lJldC3Gldd0fcE=s4800-w1600" alt="Tacos plated">
+    <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOY_JByHh4oEHDioLgBEKBuTl-IkQH-MpBSc5DZzhvA3cketbd0xTYmRGziJzUJLBz4ySz1gqgANzlauw54iVIsUR35A0wxp_VbchrCNfcGu8VAlaO566wt23z2-ZZu2dUB9oSx7n1zzUNSHmx9aqld7g=s4800-w1600" alt="Street taco close-up">
+    <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZO3Sky0IZCoywRjk9qsJ2nUnW2oqpaxDfhj5fxjRX8HC3sx7FLJ_-WhZ4wadjaotr4dJnGbtGZlQu6For0cqKEI_aeHnBdGkBA3FnKjUR7e6YFOOj1blQKk7kwBP4-ZGV5P24-3ucg02Va7bA=s4800-w1600" alt="At the stand">
+    <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOnDc1z2ryDpyuKLniOrn0MvwE0G7cppgoMncXfHtSCSNbRv4WCjSlclEB1ZwZeQf6m3BKHKgNeENPmgX-vzosQl65h5irJAjtUHsYRCKtImy3Etu2dHqKqyGZsk62-mmC3xcBCpkSIPJ5K4Qg=s4800-w1600" alt="Grill in action">
+    <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZMiqnfz5IZWqgG_in9vFKLpsMSRTXbWXFr_NhqflGoj29fxoPxCoWImeuunLgb2EhdUdBDOPCHXc9t7TFfGp9CEtAnaDWS6oVn7a7vOxS40cVt_7410EhkCiIbmQeFlNaygUO10Nnz6_Nrzbg=s4800-w1600" alt="Tacos ready to go">
+  </div>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">The Stand</p>
+          <h2>A real L.A. taco spot.</h2>
+        </div>
+        <div>
+          <p>No frills, no shortcuts &mdash; just consistently great tacos,
+            night after night.</p>
+          <p>Tacos El Pecas works the corner of South Soto Street the way the
+            best L.A. taco stands always have: fresh meat on the comal, warm
+            tortillas, habanero salsa and grilled onions, and regulars who
+            swear it's the best in the county.</p>
+          <p>It's an after-dark kind of place. Doors open in the late
+            afternoon and we run straight through the evening &mdash; later
+            still on weekends. Walk up, order a few, and see what the fuss is
+            about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <p class="eyebrow">The Tacos</p>
+          <h2>Off the comal.</h2>
+        </div>
+        <p class="note">Sample prices for this mockup &mdash; set to your real
+          board on the live site</p>
+      </div>
+      <div class="taco-list">
+        <div class="taco"><span class="t-name">Asada<small>Grilled steak</small></span><span class="dots"></span><span class="t-price">$3.00</span></div>
+        <div class="taco"><span class="t-name">Al Pastor<small>Marinated pork</small></span><span class="dots"></span><span class="t-price">$3.00</span></div>
+        <div class="taco"><span class="t-name">Chorizo<small>Mexican sausage</small></span><span class="dots"></span><span class="t-price">$2.75</span></div>
+        <div class="taco"><span class="t-name">Cabeza<small>Tender, slow-cooked</small></span><span class="dots"></span><span class="t-price">$3.00</span></div>
+        <div class="taco"><span class="t-name">Tripas<small>Crispy, classic</small></span><span class="dots"></span><span class="t-price">$3.00</span></div>
+        <div class="taco"><span class="t-name">Suadero<small>Rich &amp; juicy</small></span><span class="dots"></span><span class="t-price">$3.00</span></div>
+      </div>
+      <p class="menu-foot">Every taco comes with habanero salsa and grilled
+        onions &mdash; aguas frescas and cold drinks on the side.</p>
+    </div>
+  </section>
+
+  <section class="voices">
+    <div class="wrap">
+      <p class="eyebrow">Word of Mouth</p>
+      <h2>What people say.</h2>
+      <div class="quote-wall">
+        <blockquote>
+          <p>Possibly the best tacos in L.A. county. I've tried plenty of
+            stands across L.A., San Diego, and Mexico — Pecas is consistently
+            fresh and at the top of my list.</p>
+          <div class="who">&mdash; Robert L.</div>
+        </blockquote>
+        <blockquote>
+          <p>Always a must when I'm in L.A. Packed with flavor, great
+            portions, classic street-taco style. One of my go-to spots.</p>
+          <div class="who">&mdash; Jose S.</div>
+        </blockquote>
+        <blockquote>
+          <p>The flavor is rich, cooked to perfection — every taco delicious.
+            Made me dream of Mexico. The tacos and the staff were on point.</p>
+          <div class="who">&mdash; Diana G.</div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Hours &amp; Location</p>
+          <h2>Find the stand.</h2>
+          <div class="hours">
+            <div class="hr"><span>Mon &ndash; Thu</span><span>5:00pm &ndash; 12:00am</span></div>
+            <div class="hr late"><span>Fri &ndash; Sat</span><span>4:00pm &ndash; 1:00am</span></div>
+            <div class="hr"><span>Sunday</span><span>4:00pm &ndash; 12:00am</span></div>
+          </div>
+          <div class="place">
+            1001&ndash;1021 S Soto St<br>Los Angeles, CA 90023<br>
+            Phone: <a href="tel:+13238164475">(323) 816-4475</a><br>
+            <a href="https://maps.google.com/?cid=8961848245201179074"
+               target="_blank" rel="noopener">Find us on Google &rarr;</a>
+          </div>
+        </div>
+        <iframe class="map" loading="lazy" title="Map to Tacos El Pecas"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=1001+S+Soto+St,+Los+Angeles,+CA+90023&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-cta">
+      <p class="eyebrow">Hungry after dark?</p>
+      <h2>The comal's on.</h2>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=1001+S+Soto+St,+Los+Angeles,+CA+90023"
+         target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <div class="foot-grid">
+      <div><span class="eyebrow">Visit</span>1001&ndash;1021 S Soto St<br>Los Angeles, CA 90023</div>
+      <div><span class="eyebrow">Hours</span>Daily from 4&ndash;5pm<br>Late till 12&ndash;1am</div>
+      <div><span class="eyebrow">Call</span><a href="tel:+13238164475">(323) 816-4475</a></div>
+      <div><span class="eyebrow">Find us on</span><a href="https://maps.google.com/?cid=8961848245201179074" target="_blank" rel="noopener">Google Business</a></div>
+    </div>
+    <p class="credit">Mockup designed by LJ Sites — interested in making this
+      yours? <a href="mailto:jcpeng2002@gmail.com">jcpeng2002@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
